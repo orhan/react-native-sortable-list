@@ -118,7 +118,7 @@ export default class SortableList extends Component {
         });
       });
 
-      if (!nextProps.fixedRowSize) {
+      if (!nextProps.fixedRowSize || data.length !== nextData.length) {
         this.setState({
           animated: false,
           data: nextData,
@@ -142,9 +142,9 @@ export default class SortableList extends Component {
     const { data: prevData } = prevState;
 
     if (
-      (data && prevData && data.length === prevData.length && !this.props.fixedRowSize) &&
       data &&
       prevData &&
+      (!this.props.fixedRowSize || data.length !== prevData.length) &&
       !shallowEqual(data, prevData)
     ) {
       this._onUpdateLayouts();
