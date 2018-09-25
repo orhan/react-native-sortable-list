@@ -142,7 +142,7 @@ export default class SortableList extends Component {
     const { data: prevData } = prevState;
 
     if (
-      !this.props.fixedRowSize &&
+      (data && prevData && data.length === prevData.length && !this.props.fixedRowSize) &&
       data &&
       prevData &&
       !shallowEqual(data, prevData)
