@@ -76,8 +76,6 @@ export default class Row extends Component {
 
       this._longPressTimer = setTimeout(() => {
         if (this._active) {
-          this._active = !this._active;
-          this.forceUpdate();
           return;
         }
 
@@ -110,8 +108,9 @@ export default class Row extends Component {
     onPanResponderRelease: (e, gestureState) => {
       if (this._active) {
         this._toggleActive(e, gestureState);
-
+        console.log("TEST 01");
       } else {
+        console.log("TEST 02");
         this._cancelLongPress();
 
         if (this._isTouchInsideElement(e) && this.props.onPress) {
