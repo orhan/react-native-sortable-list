@@ -75,7 +75,10 @@ export default class Row extends Component {
       if (this.props.manuallyActivateRows) return;
 
       this._longPressTimer = setTimeout(() => {
-        if (this._active) return;
+        if (this._active) {
+          this._active = !this._active;
+          return;
+        }
 
         this._toggleActive(e, gestureState);
       }, this.props.activationTime);
