@@ -135,6 +135,8 @@ export default class SortableList extends Component {
     } else if (order && nextOrder && !shallowEqual(order, nextOrder)) {
       this.setState({ order: nextOrder });
     }
+    
+    this.setState({ scrollEnabled: nextProps.scrollEnabled });
   }
 
   componentDidUpdate(prevProps, prevState) {
