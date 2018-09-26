@@ -120,7 +120,9 @@ export default class Row extends Component {
     },
 
     onPanResponderTerminationRequest: () => {
+      console.log("TEST 03");
       if (this._active) {
+        console.log("TEST 04");
         // If a view is active do not release responder.
         return false;
       }
