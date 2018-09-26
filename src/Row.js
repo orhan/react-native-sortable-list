@@ -76,8 +76,6 @@ export default class Row extends Component {
 
       this._longPressTimer = setTimeout(() => {
         if (this._active) {
-          this._active = !this._active;
-          this.forceUpdate();
           return;
         }
 
