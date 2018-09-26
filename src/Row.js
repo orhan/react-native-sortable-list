@@ -133,6 +133,7 @@ export default class Row extends Component {
     },
 
     onPanResponderTerminate: (e, gestureState) => {
+      onsole.log("TEST 05");
       this._cancelLongPress();
 
       // If responder terminated while dragging,
